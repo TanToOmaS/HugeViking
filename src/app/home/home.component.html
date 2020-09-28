@@ -1,0 +1,29 @@
+<main>
+
+    <mat-card>
+        <form action="" class="action">
+            <mat-form-field>
+                <mat-select placeholder="Día de la semana">
+                    <mat-option *ngFor="let dia of dias" [value]="dia">
+                        {{dia}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-select placeholder="Elige el plato">
+                    <mat-option *ngFor="let id of platosId" [value]="id">
+                        {{id}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </form>
+    </mat-card>
+
+
+
+
+</main>
+
+<button mat-flat-button color="warn">
+    GUARDAR
+</button>
