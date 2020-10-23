@@ -9,11 +9,24 @@ import { HomeComponent } from './home/home.component';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
+import {MatTabsModule} from '@angular/material/tabs';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+import {  Routes, RouterModule } from '@angular/router';
+import { PlatosComponent } from './platos/platos.component';
+
+const rutas: Routes = [ 
+  {path: 'platos',  component: PlatosComponent},
+  {path: '**',  component: HomeComponent}
+]
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    FooterComponent,
+    HeaderComponent,
+    PlatosComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +36,9 @@ import { MatSelectModule } from '@angular/material/select';
     MatCardModule,
     MatToolbarModule,
     MatIconModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTabsModule,
+    RouterModule.forRoot(rutas)
   ],
   providers: [],
   bootstrap: [AppComponent]

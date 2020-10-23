@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  
+  title = 'HUGE VIKING';
   platosId = [1, 2, 3];
   dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo" ]
 
@@ -16,3 +17,6 @@ export class HomeComponent implements OnInit {
   }
 
 }
+
+  
+
