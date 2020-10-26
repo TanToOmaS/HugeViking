@@ -14,10 +14,12 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import {  Routes, RouterModule } from '@angular/router';
 import { PlatosComponent } from './platos/platos.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 const rutas: Routes = [ 
-  {path: 'platos',  component: PlatosComponent},
-  {path: '**',  component: HomeComponent}
+  {path: 'platos',  component: PlatosComponent},  
+  {path: '', component: HomeComponent, pathMatch: 'full'},
+  {path: '**',component: NotfoundComponent, pathMatch: 'full'},
 ]
 
 @NgModule({
@@ -26,7 +28,8 @@ const rutas: Routes = [
     HomeComponent,
     FooterComponent,
     HeaderComponent,
-    PlatosComponent
+    PlatosComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
