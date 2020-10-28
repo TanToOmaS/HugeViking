@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlatosService } from './../platos.service';
 
 @Component({
   selector: 'app-platos',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlatosComponent implements OnInit {
 
-  constructor() { }
+  platos:any[] = [];
+
+  constructor(private _servicio:PlatosService) {
+
+   }
 
   ngOnInit(): void {
   }

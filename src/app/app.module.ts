@@ -16,6 +16,10 @@ import {  Routes, RouterModule } from '@angular/router';
 import { PlatosComponent } from './platos/platos.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 
+//servicios
+
+import { PlatosService } from './platos.service';
+
 const rutas: Routes = [ 
   {path: 'platos',  component: PlatosComponent},  
   {path: '', component: HomeComponent, pathMatch: 'full'},
@@ -43,7 +47,7 @@ const rutas: Routes = [
     MatTabsModule,
     RouterModule.forRoot(rutas)
   ],
-  providers: [],
+  providers: [PlatosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
