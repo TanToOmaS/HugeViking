@@ -1,9 +1,13 @@
-<h2>PLATOS PRINCIPALES</h2>
+<div class="content" role="main">
+    <div class="card highlight-card card-small">
+        <h2 style="text-align: center;">PLATOS PRINCIPALES</h2>
 
-<ul class="list-group">
-    <li class="list-group-item" *ngFor="let plato of platos">
-        <h4>Nombre: {{plato.nombre}}</h4>
-        <h4>Calorías: {{plato.calorias}}</h4>
-        <a href="#">Saber más...</a>
-    </li>
-</ul>
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let plato of platos">
+                <h4><span style="font-weight: bold;">Nombre:</span>{{plato.nombre}}</h4>
+                <h4><span style="font-weight: bold;">Calorías:</span>{{plato.calorias}}</h4>
+                <a href="#">Saber más...</a>
+            </li>
+        </ul>
+    </div>
+</div>
