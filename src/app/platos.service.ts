@@ -11,12 +11,12 @@ export class PlatosService {
     {    
     nombre: 'Macarrones',
     calorias: '400 kcal',
-    descripción: 'El plato de carbohidratos por excelencia en casa.'
+    descripcion: 'El plato de carbohidratos por excelencia en casa.'
     },
     {    
       nombre: 'Cocido',
       calorias: '650 kcal',
-      descripción: 'La legumbre por excelencia de los domingos.'
+      descripcion: 'La legumbre por excelencia de los domingos.'
     }
   ]
 
@@ -26,6 +26,9 @@ export class PlatosService {
 
    obtenerPlatos (){
      return this.platos;
+   }
+   obtenerUno(i) {
+     return this.platos[i];
    }
 
 }

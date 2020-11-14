@@ -19,9 +19,11 @@ import { NotfoundComponent } from './notfound/notfound.component';
 //servicios
 
 import { PlatosService } from './platos.service';
+import { DetallesPlatosComponent } from './detalles-platos/detalles-platos.component';
 
 const rutas: Routes = [ 
-  {path: 'platos',  component: PlatosComponent},  
+  {path: 'platos',  component: PlatosComponent},
+  {path: 'platos/:id',  component: DetallesPlatosComponent},  
   {path: '', component: HomeComponent, pathMatch: 'full'},
   {path: '**',component: NotfoundComponent, pathMatch: 'full'},
 ]
@@ -33,7 +35,8 @@ const rutas: Routes = [
     FooterComponent,
     HeaderComponent,
     PlatosComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    DetallesPlatosComponent
   ],
   imports: [
     BrowserModule,
