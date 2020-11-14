@@ -1,1 +1,9 @@
-<p>platos works!</p>
+<h2>PLATOS PRINCIPALES</h2>
+
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let plato of platos">
+        <h4>Nombre: {{plato.nombre}}</h4>
+        <h4>Calorías: {{plato.calorias}}</h4>
+        <a href="#">Saber más...</a>
+    </li>
+</ul>

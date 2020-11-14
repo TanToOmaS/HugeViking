@@ -8,11 +8,11 @@ import { PlatosService } from './../platos.service';
 })
 export class PlatosComponent implements OnInit {
 
-  platos:any[] = [];
+  platos: any[] = [];
 
-  constructor(private _servicio:PlatosService) {
-
-   }
+  constructor(private _servicio: PlatosService) {
+    this.platos = _servicio.obtenerPlatos();
+  }
 
   ngOnInit(): void {
   }
