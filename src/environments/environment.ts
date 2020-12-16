@@ -1,10 +1,18 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
-
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyAULoElTc_CSGacpUKLvh-CCi7kGVrZzfw",
+    authDomain: "huge-viking.firebaseapp.com",
+    databaseURL: "https://huge-viking.firebaseio.com",
+    projectId: "huge-viking",
+    storageBucket: "huge-viking.appspot.com",
+    messagingSenderId: "809201192270",
+    appId: "1:809201192270:web:53e97e364d453c5523621f",
+    measurementId: "G-ERR3YMG04Y"
+  }
 };
+
+
 
 /*
  * For easier debugging in development mode, you can import the following file

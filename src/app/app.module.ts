@@ -15,6 +15,11 @@ import { HeaderComponent } from './header/header.component';
 import {  Routes, RouterModule } from '@angular/router';
 import { PlatosComponent } from './platos/platos.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 //servicios
 
@@ -40,6 +45,10 @@ const rutas: Routes = [
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    AngularFireStorageModule, // imports firebase/storage only needed for storage features
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,

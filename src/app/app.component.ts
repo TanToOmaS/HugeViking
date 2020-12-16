@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AngularFirestore } from 'angularfire2/firestore';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -8,4 +10,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'HUGE VIKING';
+  platos: Observable<any[]>;
+  constructor(db: AngularFirestore) {
+    this.platos = db.collection('platos').valueChanges();
+  }
 }

@@ -2,7 +2,13 @@
     <app-header></app-header>
     <br>
 
-    <router-outlet></router-outlet>
+    <router-outlet>
+        <ul>
+            <li class="text" *ngFor="let plato of platos | async">
+                {{plato.nombre}}
+            </li>
+        </ul>
+    </router-outlet>
 
 
     <!-- Footer -->

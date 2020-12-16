@@ -9,16 +9,16 @@ import { PlatosService } from './../platos.service';
 })
 export class DetallesPlatosComponent implements OnInit {
 
-  platos: any [] = [];
-  
+  detallesPlatos: any [] = [];
+
   constructor(
     private ruta:ActivatedRoute,
     private _servicio:PlatosService
   ) { 
     this.ruta.params.subscribe(params=>{
       console.log (params['id'])
-      this.platos = this._servicio.obtenerPlatos();
-      this.platos = this._servicio.obtenerUno(params['id'])
+      this.detallesPlatos = this._servicio.obtenerPlatos();
+      this.detallesPlatos = this._servicio.obtenerUno(params['id'])
     })
   }
 
