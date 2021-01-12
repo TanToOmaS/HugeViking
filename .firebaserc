@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "huge-viking": {
+      "hosting": {
+        "HugeViking": [
+          "huge-viking"
+        ]
+      }
+    }
+  }
+}
