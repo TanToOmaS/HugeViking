@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlatosService } from './../platos.service';
 
 
 @Component({
@@ -9,10 +10,12 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   
   title = 'HUGE VIKING';
-  platosId = [1, 2, 3];
+  platos: any[] = [];
   dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo" ]
 
-  constructor() { }
+  constructor(private _servicio: PlatosService) {
+    this.platos = _servicio.obtenerPlatos();
+  }
 
   ngOnInit(): void {
   }

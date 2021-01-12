@@ -17,8 +17,8 @@
                     </mat-form-field>
                     <mat-form-field>
                         <mat-select placeholder="Elige el plato">
-                            <mat-option *ngFor="let id of platosId" [value]="id">
-                                {{id}}
+                            <mat-option *ngFor="let plato of platos">
+                                {{plato.nombre}}
                             </mat-option>
                         </mat-select>
                     </mat-form-field>
