@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Plato } from '../model/plato';
 import { PlatosService } from './../platos.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { PlatosService } from './../platos.service';
 })
 export class DetallesPlatosComponent implements OnInit {
 
-  detallesPlatos: any[] = [];
+  detallesPlatos: Plato;
 
   constructor(
     private ruta:ActivatedRoute,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Plato } from '../model/plato';
 import { PlatosService } from './../platos.service';
 
 
@@ -9,10 +10,12 @@ import { PlatosService } from './../platos.service';
 })
 export class PlatosComponent implements OnInit {
 
-  platos: any[] = [];
+  platos: Plato[] = [];
 
   constructor(private _servicio: PlatosService) {
-    this.platos = _servicio.obtenerPlatos();
+    _servicio.obtenerPlatos().subscribe(platos => {
+      this.platos = platos;
+    })
   }
 
   ngOnInit(): void {
