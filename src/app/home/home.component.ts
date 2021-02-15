@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Plato } from '../model/plato';
 import { PlatosService } from './../platos.service';
 
 
@@ -10,13 +11,19 @@ import { PlatosService } from './../platos.service';
 export class HomeComponent implements OnInit {
   
   title = 'HUGE VIKING';
-  platos: any[] = [];
+  platos: Plato[] = [];
   dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo" ]
 
-  constructor(private _servicio: PlatosService) {
-    this.platos = _servicio.obtenerPlatos();
-  }
+  // platoSeleccionado = this._servicio.obtenerUno(params['id'])
+  // guardarPlato() {
+  //   this.plato
+  // }
 
+  constructor(private _servicio: PlatosService) {
+    _servicio.obtenerPlatos().subscribe(platos => {
+      this.platos = platos;
+  })
+    }
   ngOnInit(): void {
   }
 

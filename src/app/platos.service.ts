@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Plato } from './model/plato';
-import {map} from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 @Injectable({
 
@@ -34,7 +34,7 @@ export class PlatosService {
     // Escuchar a todos los cambios que puedan surgir en la coleccion de platos
     return this.platosCollection.snapshotChanges().pipe(
       // Transformar los objetos de cambios de firestore
-      map(changes => 
+      map(changes =>
         changes.map(change => {
           // Convertir documento de firestore a nuestro dominio (Plato)
           const plato = change.payload.doc.data() as Plato;
@@ -47,5 +47,9 @@ export class PlatosService {
   obtenerUno(i: number): Plato {
     return this.platos[i];
   }
+
+  create(plato: Plato) {
+    this.platosCollection.add(plato);
+  };
 
 }
