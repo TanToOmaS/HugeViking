@@ -5,16 +5,16 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './components/home/home.component';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
 import {MatTabsModule} from '@angular/material/tabs';
-import { FooterComponent } from './footer/footer.component';
-import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
 import {  Routes, RouterModule } from '@angular/router';
-import { PlatosComponent } from './platos/platos.component';
-import { NotfoundComponent } from './notfound/notfound.component';
+import { PlatosComponent } from './components/platos/platos.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -22,7 +22,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 //servicios
 
-import { PlatosService } from './platos.service';
+import { PlatosService } from './services/platos.service';
 import { DetallesPlatosComponent } from './detalles-platos/detalles-platos.component';
 
 const rutas: Routes = [ 

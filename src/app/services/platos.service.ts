@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import { Plato } from './model/plato';
+import { Plato } from '../model/plato';
 import { map } from 'rxjs/operators';
 
 @Injectable({

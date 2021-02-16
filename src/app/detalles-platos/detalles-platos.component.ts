@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Plato } from '../model/plato';
-import { PlatosService } from './../platos.service';
+import { PlatosService } from '../services/platos.service';
 
 @Component({
   selector: 'app-detalles-platos',

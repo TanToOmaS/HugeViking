@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Plato } from '../model/plato';
-import { PlatosService } from './../platos.service';
+import { Plato } from '../../model/plato';
+import { PlatosService } from '../../services/platos.service';
 
 
 @Component({
