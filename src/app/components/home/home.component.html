@@ -8,16 +8,16 @@
         <div>
             <mat-card>
                 <form action="" class="action">
-                    <mat-form-field>
-                        <mat-select placeholder="Día de la semana">
-                            <mat-option *ngFor="let dia of dias" [value]="dia">
-                                {{dia}}
+                    <mat-form-field *ngIf="semana">
+                        <mat-select placeholder="Día de la semana" [(value)]="idDia">
+                            <mat-option *ngFor="let dia of semana.dias" [value]="dia.orden">
+                                {{dia.nombre}}
                             </mat-option>
                         </mat-select>
                     </mat-form-field>
                     <mat-form-field>
-                        <mat-select placeholder="Elige el plato">
-                            <mat-option *ngFor="let plato of platos">
+                        <mat-select placeholder="Elige el plato" [(value)]="idPlato">
+                            <mat-option *ngFor="let plato of platos" [value]="plato.id">
                                 {{plato.nombre}}
                             </mat-option>
                         </mat-select>
@@ -27,7 +27,7 @@
             <br>
             <br>
             <div class="saveButton">
-                <button mat-flat-button color="warn">
+                <button mat-flat-button color="warn" (click)="guardarPlato()">
                 GUARDAR
                 </button>
             </div>
@@ -38,10 +38,17 @@
 
 </div>
 
-<mat-tab-group>
-    <mat-tab *ngFor="let dia of dias" label={{dia}}> </mat-tab>
+<mat-tab-group *ngIf="semana">
+    <mat-tab *ngFor="let dia of semana.dias" label={{dia.nombre}}>
+        <ul class="list-group" *ngFor="let plato of dia.platos">
+            <li>{{plato.nombre}} &nbsp; <button>&times;</button></li>
+            <!-- <li>{{plato.descripcion}}</li> -->
+            <!-- <li>{{plato.calorias}}</li> -->
+        </ul>
+    </mat-tab>
 </mat-tab-group>
-<mat-card>
+
+<!-- <mat-card>
     <div class="row">
         <ul class="list-group" *ngFor="let plato of platos">
             <li>{{plato.nombre}}</li>
@@ -49,4 +56,4 @@
             <li>{{plato.calorias}}</li>
         </ul>
     </div>
-</mat-card>
+</mat-card> -->

@@ -13,18 +13,6 @@ export class PlatosService {
 
   private platosCollection: AngularFirestoreCollection<Plato>;
 
-  private platos: Plato[] = [
-    {
-      nombre: 'Macarrones',
-      calorias: 400,
-      descripcion: 'El plato de carbohidratos por excelencia en casa.'
-    },
-    {
-      nombre: 'Cocido',
-      calorias: 650,
-      descripcion: 'La legumbre por excelencia de los domingos.'
-    }
-  ]
 
   constructor(private angularFirestore: AngularFirestore) {
     this.platosCollection = this.angularFirestore.collection('platos');
@@ -38,18 +26,19 @@ export class PlatosService {
         changes.map(change => {
           // Convertir documento de firestore a nuestro dominio (Plato)
           const plato = change.payload.doc.data() as Plato;
+          plato.id = change.payload.doc.id;
           return plato;
         })
       )
     );
   }
 
-  obtenerUno(i: number): Plato {
-    return this.platos[i];
-  }
+  // obtenerUno(i: number): Plato {
+  //   return this.platos[i];
+  // }
 
-  create(plato: Plato) {
-    this.platosCollection.add(plato);
-  };
+  // create(plato: Plato) {
+  //   this.platosCollection.add(plato);
+  // };
 
 }
