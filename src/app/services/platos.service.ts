@@ -11,7 +11,7 @@ import { map } from 'rxjs/operators';
 
 export class PlatosService {
 
-  private platosCollection: AngularFirestoreCollection<Plato>;
+  platosCollection: AngularFirestoreCollection<Plato>;
 
 
   constructor(private angularFirestore: AngularFirestore) {
@@ -33,12 +33,20 @@ export class PlatosService {
     );
   }
 
-  // obtenerUno(i: number): Plato {
-  //   return this.platos[i];
-  // }
+  crearPlato(plato: Plato): void {
+    this.platosCollection.add(plato);
+  }
 
-  // create(plato: Plato) {
-  //   this.platosCollection.add(plato);
-  // };
+  actualizarPlato(plato: Plato): void {
+    this.angularFirestore.doc("platos/" + plato.id).update(plato);
+  }
+  
+  borrarPlato(plato: Plato): void {
+    this.angularFirestore.doc("platos/" + plato.id).delete();
+  }
+
+  obtenerId(i: number): Plato {
+    return this.platosCollection[i];
+  }
 
 }

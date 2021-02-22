@@ -18,7 +18,7 @@ export class DetallesPlatosComponent implements OnInit {
   ) { 
     this.ruta.params.subscribe(params=>{
       console.log (params['id'])      
-      this.detallesPlatos = this._servicio.obtenerUno(params['id'])
+      this.detallesPlatos = this._servicio.obtenerId(params['id'])
     })
   }
 

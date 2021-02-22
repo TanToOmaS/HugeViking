@@ -41,7 +41,7 @@
 <mat-tab-group *ngIf="semana">
     <mat-tab *ngFor="let dia of semana.dias" label={{dia.nombre}}>
         <ul class="list-group" *ngFor="let plato of dia.platos">
-            <li>{{plato.nombre}} &nbsp; <button>&times;</button></li>
+            <li>{{plato.nombre}} &nbsp; <button (click)="eliminarPlato()">&times;</button></li>
             <!-- <li>{{plato.descripcion}}</li> -->
             <!-- <li>{{plato.calorias}}</li> -->
         </ul>

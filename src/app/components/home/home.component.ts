@@ -16,12 +16,7 @@ export class HomeComponent implements OnInit {
   platos: Plato[] = [];
   semana: Semana;
   idDia: number = 0;
-  idPlato: string;
-
-  // platoSeleccionado = this._servicio.obtenerUno(params['id'])
-  // guardarPlato() {
-  //   this.plato
-  // }
+  idPlato: string;  
 
   constructor(private _servicioPlatos: PlatosService,
     private _servicioSemanas: SemanasService) {
@@ -51,6 +46,13 @@ export class HomeComponent implements OnInit {
     const dia = this.semana.dias.find(dia => dia.orden === this.idDia);
     const plato = this.platos.find(plato => plato.id === this.idPlato);
     dia.platos.push(plato);
+    this._servicioSemanas.actualizarSemana(this.semana);
+  }
+
+  eliminarPlato() {
+    const dia = this.semana.dias.find(dia => dia.orden === this.idDia);
+    const plato = this.platos.find(plato => plato.id === this.idPlato);
+    dia.platos.pop();
     this._servicioSemanas.actualizarSemana(this.semana);
   }
 

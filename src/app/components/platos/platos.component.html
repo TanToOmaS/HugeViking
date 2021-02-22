@@ -11,3 +11,26 @@
         </ul>
     </div>
 </div>
+<br>
+<div class="content">
+    <h2 style="text-align: center; color: honeydew;">AÑADIR NUEVO PLATO</h2>
+    <form action="" class="action">
+        <div class="mb-2">
+            <label for="NOMBREDELPLATO" class="form-label" style="text-align: center; color: honeydew;">NOMBRE DEL PLATO</label>
+            <input type="text " class="form-control " id="nombrePlato " placeholder="AÑADE EL NOMBRE DEL PLATO ">
+        </div>
+        <div class="mb-2 ">
+            <label for="CALORIASDELPLATO " class="form-label " style="text-align: center; color: honeydew;">CALORIAS DEL PLATO</label>
+            <input type="text " class="form-control " id="caloriasPlato " placeholder="¿CUÁNTAS KCAL TIENE?">
+        </div>
+        <div class="mb-2 ">
+            <label for="DESCRIPCIONDELPLATO " class="form-label" style="text-align: center; color: honeydew;">DESCRIPCIÓN</label>
+            <textarea class="form-control" ([ngModel])="platos.nombre" id="descripcionPlato" placeholder="¿EN QUÉ CONSISTE?" rows="3 "></textarea>
+        </div>
+        <div class="saveButton">
+            <button mat-flat-button color="warn">
+            GUARDAR
+            </button>
+        </div>
+    </form>
+</div>
